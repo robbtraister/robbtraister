@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# if no which, install debianutils for termux
+[ $(which pwd 2> /dev/null) ] || pkg install debianutils
+
 THIS_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # download apps
