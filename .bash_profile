@@ -24,7 +24,7 @@ alias locals='git branch --list'
 alias log='git log'
 alias pop='git add -A && git stash pop'
 alias pull='git pull && prune'
-alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) && git push --tags"
+alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) && git push --tags --no-verify"
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
 
