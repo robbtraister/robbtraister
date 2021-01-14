@@ -183,6 +183,11 @@ bump() {
 }
 
 update() {
+  if [ "$(which softwareupdate)" ]
+  then
+    softwareupdate -i -a
+  fi
+
   if [ "$(which brew)" ]
   then
     brew update-reset
