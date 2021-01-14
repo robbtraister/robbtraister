@@ -46,6 +46,7 @@ then
     ruby \
     tmux \
     vim \
+    visual-studio-code \
     yarn
 fi
 if [ "$(which pkg)" ]
