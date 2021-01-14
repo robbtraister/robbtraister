@@ -9,11 +9,8 @@ THIS_DIR=$(cd "$(dirname "$0")" && pwd)
 if [ "$(which open)" ]
 then
   open \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+docker+mac' \
     'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+duet+display' \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+firefox+developer+edition' \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+iterm2' \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+vs+code'
+    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+firefox+developer+edition'
 fi
 
 # install homebrew
@@ -26,9 +23,14 @@ fi
 if [ "$(which brew)" ]
 then
   brew install \
+    bash \
+    homebrew/cask/docker \
+    firefox \
+    google-chrome \
     git \
     grep \
     gzip \
+    iterm2 \
     mariadb \
     memcached \
     nano \

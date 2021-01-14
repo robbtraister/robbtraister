@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "alexkrechik.cucumberautocomplete",
+    "coenraads.bracket-pair-colorizer-2",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "hookyqr.beautify",
+    "ivory-lab.jenkinsfile-support",
+    "mhutchie.git-graph",
+    "ms-azuretools.vscode-docker",
+    "ms-python.python",
+    "naumovs.color-highlight",
+    "stylelint.vscode-stylelint",
+    "mgmcdermott.vscode-language-babel",
+  ]
+}
+  

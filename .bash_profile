@@ -8,6 +8,9 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 # export PS1="\$(echo \$WORKSPACE | sed -e 's/^/\[\033[38;5;208m\][/' -e 's/$/]\[\033[0m\]/')\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 # export PS1="\[\e[43m\]\[\e[38;5;0m\]\w\[\e[42m\]\[\e[1;97m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[0m\]\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+
 # git shortcuts
 alias add='git add -A'
 alias amend='git commit --amend'
@@ -48,6 +51,10 @@ remotes() {
 
 reset() {
   REF=${1:-HEAD}
+  if [ -n "$(echo ${REF} | grep '^[0-9]*$')" ]
+  then
+    REF="HEAD~${REF}"
+  fi
   git reset "${REF}"
 }
 
@@ -66,7 +73,7 @@ show() {
 alias dc='docker-compose'
 alias images='docker images'
 alias nuke="docker system prune -f && docker network prune -f && (docker volume ls --format='{{.Name}}' | egrep '^[a-z0-9]{64}$' | xargs docker volume rm)"
-alias run='npm run-script'
+# alias run='npm run-script'
 
 build() {
   dc build --pull $@
@@ -101,6 +108,8 @@ alias ws="presetDir $HOME/Documents/workspace"
 alias ci="presetDir $HOME/Documents/workspace/CitrineInformatics"
 alias rt="presetDir $HOME/Documents/workspace/robbtraister"
 alias sb="presetDir $HOME/Documents/workspace/sandbox"
+# if no package.json is found, npm prefix returns pwd
+alias root="cd $(npm prefix)"
 
 stop() {
   NAME="$1"
