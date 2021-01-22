@@ -192,7 +192,7 @@ update() {
   then
     brew update-reset
     brew update
-    brew upgrade
+    brew upgrade --greedy
     brew cleanup
     brew doctor
   fi
