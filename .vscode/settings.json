@@ -1,51 +1,34 @@
 {
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.osx": "/bin/bash",
-  "workbench.activityBar.visible": true,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.renderWhitespace": "boundary",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 2,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.renderWhitespace": "boundary",
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
-  "workbench.panel.defaultLocation": "right",
-  "python.terminal.activateEnvironment": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.find.addExtraSpaceOnTop": false,
-  "terminal.integrated.scrollback": 5000,
-  "yaml.schemas": {
-    "file:///Users/rtraister/.vscode/extensions/atlassian.atlascode-2.7.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "atlascode.bitbucket.enabled": false,
-  "atlascode.jira.jqlList": [
-    {
-      "id": "baadfec2-5249-4796-9795-b8d70f5546ce",
-      "enabled": true,
-      "name": "My citrine Issues",
-      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-      "siteId": "8520870d-766f-4c53-9852-271eb7bc2e95",
-      "monitor": true
-    }
-  ],
-  "atlascode.showWelcomeOnInstall": false,
-  "atlascode.jira.explorer.nestSubtasks": true,
-  "atlascode.jira.todoIssues.enabled": false,
-  "atlascode.jira.statusbar.showProduct": false,
-  "atlascode.jira.statusbar.showUser": false,
-  "atlascode.jira.statusbar.showLogin": true,
-  "atlascode.jira.statusbar.showActiveIssue": true,
-  "typescript.tsserver.maxTsServerMemory": 8192,
+  "javascript.format.enable": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
+  "json.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.shell.osx": "/bin/bash",
+  "typescript.format.enable": false,
+  "typescript.tsserver.maxTsServerMemory": 8192,
   "typescript.tsserver.log": "verbose",
-  "files.watcherExclude": {
-    "ui/gollum/mocks/**": true
-  }
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.visible": true,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.startupEditor": "newUntitledFile"
 }
