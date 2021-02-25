@@ -33,14 +33,19 @@
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true
   },
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  },
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.shell.osx": "/bin/bash",
+  "terminal.integrated.showExitAlert": false,
   "typescript.format.enable": false,
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.tsserver.maxTsServerMemory": 4096,
   "typescript.tsserver.log": "verbose",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "newUntitledFile"
