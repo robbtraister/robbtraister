@@ -1,31 +1,44 @@
 {
   "editor.codeActionsOnSave": {
+    "source.fixAll": false,
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
   "editor.formatOnSave": true,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.find.addExtraSpaceOnTop": false,
   "editor.renderWhitespace": "boundary",
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 2,
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.workingDirectories": [
+    "./"
+  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
-  "javascript.format.enable": true,
+  "javascript.format.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
   "json.format.enable": true,
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
   },
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.shell.osx": "/bin/bash",
   "typescript.format.enable": false,
-  "typescript.tsserver.maxTsServerMemory": 8192,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.tsserver.maxTsServerMemory": 4096,
   "typescript.tsserver.log": "verbose",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.activityBar.visible": true,
