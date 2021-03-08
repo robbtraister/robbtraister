@@ -24,6 +24,7 @@ if [ "$(which brew)" ]
 then
   brew install \
     bash \
+    bitwarden \
     homebrew/cask/docker \
     firefox \
     google-chrome \
