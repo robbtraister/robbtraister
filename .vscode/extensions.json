@@ -10,10 +10,11 @@
     "ivory-lab.jenkinsfile-support",
     "mhutchie.git-graph",
     "ms-azuretools.vscode-docker",
+    "ms-vsliveshare.vsliveshare",
+    "ms-vsliveshare.vsliveshare-audio",
     "ms-python.python",
     "naumovs.color-highlight",
     "stylelint.vscode-stylelint",
     "mgmcdermott.vscode-language-babel",
   ]
 }
-  
