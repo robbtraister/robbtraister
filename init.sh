@@ -24,7 +24,7 @@ if [ "$(which brew)" ]
 then
   brew install \
     bash \
-    bitwarden \
+    # bitwarden \ # use the app store version for biometrics
     homebrew/cask/docker \
     firefox \
     google-chrome \
