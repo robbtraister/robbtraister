@@ -38,7 +38,7 @@
   },
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.scrollback": 5000,
-  "terminal.integrated.shell.osx": "/bin/bash",
+  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
   "terminal.integrated.showExitAlert": false,
   "typescript.format.enable": false,
   "typescript.preferences.importModuleSpecifier": "shortest",
