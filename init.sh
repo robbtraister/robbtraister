@@ -101,6 +101,7 @@ fi
 
 # setup bash_profile
 PROFILE_IMPORT=". ${THIS_DIR}/.bash_profile"
+touch ~/.bash_profile
 if [ ! "$(cat ~/.bash_profile | grep -F "${PROFILE_IMPORT}")" ]
 then
   echo "\n${PROFILE_IMPORT}" >> ~/.bash_profile
