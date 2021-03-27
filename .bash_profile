@@ -202,6 +202,12 @@ update() {
     pkg update
   fi
 
+  if [ "$(which apt)" ]
+  then
+    apt update
+    apt upgrade
+  fi
+
   if [ "$(nvm --version 2> /dev/null)" ]
   then
     CURRENT=$(nvm current)
