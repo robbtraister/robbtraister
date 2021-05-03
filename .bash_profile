@@ -11,6 +11,8 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
+shopt -s globstar
+
 # git shortcuts
 alias add='git add -A'
 alias amend='git commit --amend'

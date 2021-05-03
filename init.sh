@@ -25,6 +25,7 @@ then
   brew install \
     bash \
     # bitwarden \ # use the app store version for biometrics
+    # duet \ # use the beta version for wired connectivity
     homebrew/cask/docker \
     firefox \
     google-chrome \
@@ -49,7 +50,8 @@ then
     vim \
     visual-studio-code \
     yarn \
-    zoom
+    zoom \
+    zsh
 fi
 if [ "$(which pkg)" ]
 then
@@ -73,7 +75,8 @@ then
     ruby \
     tmux \
     vim \
-    yarn
+    yarn \
+    zsh
 fi
 
 # install global npm utilities
