@@ -28,7 +28,7 @@
     "command": "terminal.focus"
   },
   {
-    "key": "cmd+r",
+    "key": "shift+cmd+r",
     "command": "workbench.action.reloadWindow"
   }
 ]
