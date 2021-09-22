@@ -232,38 +232,41 @@ update() {
   )
 }
 
-[ -s /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# [ -s /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ "$(nvm --version 2> /dev/null)" ]
-then
-  nvm_use() {
-    if [ -f ./.nvmrc ]
-    then
-      nvm use 2> /dev/null
-    else
-      if [ -f ./package.json ]
-      then
-        nvm use default 2> /dev/null
-      fi
-    fi
-  }
+# if [ "$(nvm --version 2> /dev/null)" ]
+# then
+#   nvm_use() {
+#     if [ -f ./.nvmrc ]
+#     then
+#       nvm use 2> /dev/null
+#     else
+#       if [ -f ./package.json ]
+#       then
+#         nvm use default 2> /dev/null
+#       fi
+#     fi
+#   }
 
-  cd() {
-    builtin cd "$@" && nvm_use
-  }
+#   cd() {
+#     builtin cd "$@" && nvm_use
+#   }
 
-  # # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
-  #     # if not found in /usr/local/etc, try the brew --prefix location
-  #     [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
-  #         . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-  # # }
+#   # # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
+#   #     # if not found in /usr/local/etc, try the brew --prefix location
+#   #     [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
+#   #         . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+#   # # }
 
-  nvm_use
-fi
+#   nvm_use
+# fi
+
+eval "$(fnm env)"
+alias nvm=fnm
 
 # source <(npx --shell-auto-fallback bash)
 

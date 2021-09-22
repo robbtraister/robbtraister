@@ -28,6 +28,7 @@ then
     # duet \ # use the beta version for wired connectivity
     homebrew/cask/docker \
     firefox \
+    fnm \
     google-chrome \
     git \
     grep \
@@ -38,7 +39,7 @@ then
     nano \
     nginx \
     node \
-    nvm \
+    # nvm \
     openssh \
     openssl \
     postgresql \
