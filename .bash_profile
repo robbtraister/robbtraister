@@ -265,8 +265,11 @@ update() {
 #   nvm_use
 # fi
 
-eval "$(fnm env)"
-alias nvm=fnm
+if [ "$(which fnm)" ]
+then
+  eval "$(fnm env)"
+  alias nvm=fnm
+fi
 
 # source <(npx --shell-auto-fallback bash)
 
