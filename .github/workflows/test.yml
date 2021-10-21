@@ -1,0 +1,14 @@
+name: Verify Tests for Pull Requests
+
+on: [pull_request]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.5
+
+      - name: Install and Test
+        run: |
+          yarn run test

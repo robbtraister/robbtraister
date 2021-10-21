@@ -1,3 +1,3 @@
 export function Pages() {
-  return <>Hello World!</>;
+  return <>This is a Tested Site!</>;
 }
