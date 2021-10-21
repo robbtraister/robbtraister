@@ -15,6 +15,7 @@
     "prebuild": "yarn install --frozen-lockfile",
     "prebuild:vendors": "yarn install --frozen-lockfile",
     "prestart": "yarn run stop 2> /dev/null; yarn run build:vendors 2> /dev/null",
+    "pretest": "yarn install --frozen-lockfile",
     "start": "webpack serve",
     "stop": "lsof -i \"TCP:${PORT:-443}\" -s TCP:LISTEN | grep 'LISTEN' | awk '{ print $2; }' | xargs kill 2> /dev/null || true",
     "test": "yarn run jest",
