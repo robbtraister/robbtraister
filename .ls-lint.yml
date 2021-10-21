@@ -1,0 +1,11 @@
+ls:
+  .js: regex:[-a-z0-9_.]+
+  .jsx: regex:[-a-z0-9_.]+
+  .ts: regex:[-a-z0-9_.]+
+  .tsx: regex:[-a-z0-9_.]+
+
+ignore:
+  - .git
+  - dist
+  - node_modules
+  - public

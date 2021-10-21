@@ -1,0 +1,14 @@
+dist
+node_modules
+
+**/*.log
+
+tsconfig.tsbuildinfo
+tsconfig.build.tsbuildinfo
+
+/.stylelintcache
+/stats.json
+/report.html
+
+src/**/*.css.d.ts
+src/**/*.scss.d.ts

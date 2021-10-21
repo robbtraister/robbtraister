@@ -1,0 +1,22 @@
+{
+  "ignoreFiles": [
+    "dist/**/*",
+    "node_modules/**/*",
+    "public/**/*"
+  ],
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "scss/at-import-partial-extension-blacklist": null,
+    "declaration-block-semicolon-newline-after": "always-multi-line",
+    "declaration-no-important": true,
+    "declaration-property-value-disallowed-list": {
+      "/^border/": []
+    },
+    "max-empty-lines": 1,
+    "max-nesting-depth": null,
+    "no-eol-whitespace": true,
+    "selector-max-compound-selectors": 5,
+    "selector-no-qualifying-type": null,
+    "string-quotes": "double"
+  }
+}

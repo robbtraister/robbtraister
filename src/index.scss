@@ -1,0 +1,16 @@
+html,
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+/* stylelint-disable-next-line */
+:global(#root) {
+  display: flex;
+  flex-direction: column;
+}
