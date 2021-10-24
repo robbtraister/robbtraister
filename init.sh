@@ -13,6 +13,39 @@ then
     'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+firefox+developer+edition'
 fi
 
+if [ "$(which apt)" ]
+then
+  apt update
+  apt upgrade
+fi
+
+if [ "$(which pkg)" ]
+then
+  pkg update
+  pkg install \
+    git \
+    grep \
+    gzip \
+    man \
+    make \
+    mariadb \
+    memcached \
+    nano \
+    nginx \
+    nodejs \
+    openssh \
+    openssl \
+    postgresql \
+    python \
+    python2 \
+    redis \
+    ruby \
+    tmux \
+    vim \
+    yarn \
+    zsh
+fi
+
 # install homebrew
 if [ "$(which ruby)" ]
 then
@@ -52,31 +85,6 @@ then
     visual-studio-code \
     yarn \
     zoom \
-    zsh
-fi
-if [ "$(which pkg)" ]
-then
-  pkg install \
-    git \
-    grep \
-    gzip \
-    man \
-    make \
-    mariadb \
-    memcached \
-    nano \
-    nginx \
-    nodejs \
-    openssh \
-    openssl \
-    postgresql \
-    python \
-    python2 \
-    redis \
-    ruby \
-    tmux \
-    vim \
-    yarn \
     zsh
 fi
 
