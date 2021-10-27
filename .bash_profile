@@ -184,10 +184,21 @@ bump() {
   )
 }
 
+if [ "$(which fnm)" ]
+then
+  eval "$(fnm env)"
+  alias nvm=fnm
+fi
+
 update() {
   if [ "$(which softwareupdate)" ]
   then
     softwareupdate -i -a
+  fi
+
+  if [ "$(which xcode-select)" ]
+  then
+    xcode-select --install 2> /dev/null
   fi
 
   if [ "$(which brew)" ]
@@ -238,37 +249,31 @@ update() {
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# if [ "$(nvm --version 2> /dev/null)" ]
-# then
-#   nvm_use() {
-#     if [ -f ./.nvmrc ]
-#     then
-#       nvm use 2> /dev/null
-#     else
-#       if [ -f ./package.json ]
-#       then
-#         nvm use default 2> /dev/null
-#       fi
-#     fi
-#   }
-
-#   cd() {
-#     builtin cd "$@" && nvm_use
-#   }
-
-#   # # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
-#   #     # if not found in /usr/local/etc, try the brew --prefix location
-#   #     [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
-#   #         . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-#   # # }
-
-#   nvm_use
-# fi
-
-if [ "$(which fnm)" ]
+if [ "$(nvm --version 2> /dev/null)" ]
 then
-  eval "$(fnm env)"
-  alias nvm=fnm
+  nvm_use() {
+    if [ -f ./.nvmrc ]
+    then
+      nvm use 2> /dev/null
+    else
+      if [ -f ./package.json ]
+      then
+        nvm use default 2> /dev/null
+      fi
+    fi
+  }
+
+  cd() {
+    builtin cd "$@" && nvm_use
+  }
+
+  # # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
+  #     # if not found in /usr/local/etc, try the brew --prefix location
+  #     [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
+  #         . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+  # # }
+
+  nvm_use
 fi
 
 # source <(npx --shell-auto-fallback bash)
