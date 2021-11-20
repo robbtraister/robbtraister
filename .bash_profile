@@ -125,7 +125,7 @@ stop() {
 }
 
 dev() {
-  if [ "$(which tmux)" ]
+  if [ "$(command -v tmux)" ]
   then
     DIR_NAME="$(basename "$(pwd)")"
     if [ -z "$(tmux ls 2> /dev/null | grep "^${DIR_NAME}: ")" ]
@@ -184,24 +184,24 @@ bump() {
   )
 }
 
-if [ "$(which fnm)" ]
+if [ "$(command -v fnm)" ]
 then
   eval "$(fnm env)"
   alias nvm=fnm
 fi
 
 update() {
-  if [ "$(which softwareupdate)" ]
+  if [ "$(command -v softwareupdate)" ]
   then
     softwareupdate -i -a
   fi
 
-  if [ "$(which xcode-select)" ]
+  if [ "$(command -v xcode-select)" ]
   then
     xcode-select --install 2> /dev/null
   fi
 
-  if [ "$(which brew)" ]
+  if [ "$(command -v brew)" ]
   then
     brew update-reset
     brew update
@@ -210,12 +210,12 @@ update() {
     brew doctor
   fi
 
-  if [ "$(which pkg)" ]
+  if [ "$(command -v pkg)" ]
   then
     pkg update
   fi
 
-  if [ "$(which apt)" ]
+  if [ "$(command -v apt)" ]
   then
     apt update
     apt upgrade
@@ -226,7 +226,7 @@ update() {
     CURRENT=$(nvm current)
     nvm use system
   fi
-  if [ "$(which ncu)" ]
+  if [ "$(command -v ncu)" ]
   then
     $(ncu -g | grep '^npm -g install')
   fi

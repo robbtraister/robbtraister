@@ -1,25 +1,25 @@
 #!/bin/sh
 
 # if no which, install debianutils for termux
-[ $(which pwd 2> /dev/null) ] || pkg install debianutils
+[ $(command -v pwd 2> /dev/null) ] || pkg install debianutils
 
 THIS_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # download apps
-if [ "$(which open)" ]
+if [ "$(command -v open)" ]
 then
   open \
     'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+duet+display' \
     'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+firefox+developer+edition'
 fi
 
-if [ "$(which apt)" ]
+if [ "$(command -v apt)" ]
 then
   apt update
   apt upgrade
 fi
 
-if [ "$(which pkg)" ]
+if [ "$(command -v pkg)" ]
 then
   pkg update
   pkg install \
@@ -47,13 +47,13 @@ then
 fi
 
 # install homebrew
-if [ "$(which ruby)" ]
+if [ "$(command -v ruby)" ]
 then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 2> /dev/null
 fi
 
 # install common utilities
-if [ "$(which brew)" ]
+if [ "$(command -v brew)" ]
 then
   brew install \
     bash \
@@ -89,7 +89,7 @@ then
 fi
 
 # install global npm utilities
-if [ "$(which npm)" ]
+if [ "$(command -v npm)" ]
 then
   npm i -g \
     amphtml-validator \
@@ -100,7 +100,7 @@ then
 fi
 
 # setup vim
-if [ "$(which vim)" ]
+if [ "$(command -v vim)" ]
 then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
