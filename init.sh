@@ -58,7 +58,8 @@ then
   brew install \
     bash \
     # bitwarden \ # use the app store version for biometrics
-    # duet \ # use the beta version for wired connectivity
+    discord \
+    duet \
     homebrew/cask/docker \
     firefox \
     fnm \
@@ -92,11 +93,11 @@ fi
 if [ "$(command -v npm)" ]
 then
   npm i -g \
-    amphtml-validator \
+    # amphtml-validator \
     cost-of-modules \
-    npm-check-updates \
-    source-map-explorer \
-    webpack-bundle-analyzer
+    npm-check-updates
+    # source-map-explorer \
+    # webpack-bundle-analyzer
 fi
 
 # setup vim
