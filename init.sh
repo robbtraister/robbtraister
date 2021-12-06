@@ -68,6 +68,7 @@ then
     grep \
     gzip \
     iterm2 \
+    kap \
     mariadb \
     memcached \
     nano \
