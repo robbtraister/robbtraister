@@ -58,6 +58,7 @@ then
   brew install \
     bash \
     # bitwarden \ # use the app store version for biometrics
+    caffeine \
     discord \
     duet \
     homebrew/cask/docker \
