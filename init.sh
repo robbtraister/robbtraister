@@ -59,17 +59,20 @@ then
     bash \
     # bitwarden \ # use the app store version for biometrics
     caffeine \
+    calibre \
     discord \
     duet \
     homebrew/cask/docker \
     firefox \
     fnm \
-    google-chrome \
+    gimp \
     git \
+    google-chrome \
     grep \
     gzip \
     iterm2 \
     kap \
+    macdown \
     mariadb \
     memcached \
     nano \
@@ -122,4 +125,3 @@ if [ ! "$(cat ~/.bash_profile | grep -F "${PROFILE_IMPORT}")" ]
 then
   echo "\n${PROFILE_IMPORT}" >> ~/.bash_profile
 fi
-
