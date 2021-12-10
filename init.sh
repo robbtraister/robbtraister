@@ -56,6 +56,7 @@ fi
 if [ "$(command -v brew)" ]
 then
   brew install \
+    authy \
     bash \
     # bitwarden \ # use the app store version for biometrics
     caffeine \
