@@ -82,6 +82,7 @@ then
     python3 \
     redis \
     ruby \
+    slack \
     tmux \
     vim \
     visual-studio-code \
