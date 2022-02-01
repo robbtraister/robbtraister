@@ -91,8 +91,10 @@ bud() {
 }
 
 # python shortcuts
-alias b64d='python2 -c "import base64, sys; print base64.b64decode(sys.argv[1]);"'
-alias b64e='python2 -c "import base64, sys; print base64.b64encode(sys.argv[1]);"'
+alias pip=pip3
+alias python=python3
+alias b64d='python3 -c "import base64, sys; print(str(base64.b64decode(bytes(sys.argv[1], \"utf-8\")), \"utf-8\"));"'
+alias b64e='python3 -c "import base64, sys; print(str(base64.b64encode(bytes(sys.argv[1], \"utf-8\")), \"utf-8\"));"'
 alias serve='python3 -m http.server'
 
 # random shortcuts

@@ -36,8 +36,7 @@ then
     openssh \
     openssl \
     postgresql \
-    python \
-    python2 \
+    python3 \
     redis \
     ruby \
     tmux \
@@ -83,7 +82,6 @@ then
     openssh \
     openssl \
     postgresql \
-    python2 \
     python3 \
     redis \
     ruby \
