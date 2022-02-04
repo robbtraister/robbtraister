@@ -30,5 +30,13 @@
   {
     "key": "shift+cmd+r",
     "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
