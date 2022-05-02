@@ -32,6 +32,7 @@ alias pull='git pull && prune'
 alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) && git push --tags --no-verify"
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
+alias wip='git commit -m wip --no-verify'
 
 prune() {
   REMOTE=${1:-origin}
@@ -244,6 +245,9 @@ update() {
     pull
   )
 }
+
+[ -z "$EDITOR" ] && export EDITOR=vim
+[ -z "$GIT_EDITOR" ] && export GIT_EDITOR=vim
 
 # [ -s /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
