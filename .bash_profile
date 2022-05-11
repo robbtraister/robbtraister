@@ -221,7 +221,8 @@ update() {
   if [ "$(command -v apt)" ]
   then
     apt update
-    apt upgrade
+    apt upgrade -y
+    apt autoremove
   fi
 
   if [ "$(nvm --version 2> /dev/null)" ]
