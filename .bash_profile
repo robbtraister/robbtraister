@@ -215,7 +215,7 @@ update() {
 
   if [ "$(command -v pkg)" ]
   then
-    pkg update
+    pkg update -y
   fi
 
   if [ "$(command -v apt)" ]
