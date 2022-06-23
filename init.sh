@@ -63,7 +63,6 @@ then
     discord \
     duet \
     homebrew/cask/docker \
-    fig \
     firefox \
     fnm \
     gimp \
