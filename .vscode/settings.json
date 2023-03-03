@@ -1,16 +1,25 @@
 {
+  "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
   "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
   "editor.rulers": [
     80
   ],
+  "workbench.colorCustomizations": {
+    "[GitHub Dark]": {
+      "statusBar.background": "#234",
+      "statusBar.foreground": "#9ab",
+      "terminal.border": "#444"
+    },
+  },
   "editor.find.addExtraSpaceOnTop": false,
   "editor.renderWhitespace": "boundary",
-  "editor.scrollBeyondLastLine": false,
+  "editor.suggest.preview": true,
   "editor.tabSize": 2,
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
@@ -22,9 +31,11 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "javascript.format.enable": false,
+  // "javascript.inlayHints.parameterNames.enabled": "all",
+  // "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-  "json.format.enable": true,
+  "json.format.enable": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true
@@ -37,16 +48,74 @@
     "shell": true
   },
   "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/usr/local/bin/bash",
+      "args": [
+        "-l"
+      ],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": [
+        "-l"
+      ]
+    },
+    "fish": {
+      "path": "fish",
+      "args": [
+        "-l"
+      ]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
   "terminal.integrated.scrollback": 5000,
-  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+  // "terminal.integrated.shell.osx": "/usr/local/bin/bash",
   "terminal.integrated.showExitAlert": false,
   "typescript.format.enable": false,
+  // "typescript.inlayHints.parameterNames.enabled": "all",
+  // "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.tsserver.maxTsServerMemory": 4096,
-  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.log": "off",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.scrollBeyondLastLine": false,
+  "update.mode": "none",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false,
+    "typescriptreact": false,
+    "typescript": false
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "svelte.enable-ts-plugin": true,
+  "vscode-edge-devtools.mirrorEdits": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "explorer.experimental.fileNesting.expand": false,
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "scm.alwaysShowActions": true,
+  "git.mergeEditor": false,
+  "workbench.colorTheme": "GitHub Dark",
+  "editor.stickyScroll.enabled": true
 }

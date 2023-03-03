@@ -4,8 +4,12 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>Command</key>
+	<string></string>
 	<key>Default Bookmark Guid</key>
 	<string>2C9E75EF-0074-447B-95A8-2969576B2D0E</string>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
@@ -290,12 +294,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.1803921568627451</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.15294117647058825</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.13333333333333333</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -323,7 +331,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -343,7 +351,7 @@
 				<real>1</real>
 			</dict>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Custom Shell</string>
 			<key>Custom Directory</key>
 			<string>Recycle</string>
 			<key>Default Bookmark</key>
@@ -390,7 +398,7 @@
 			<key>HotKey Window Dock Click Action</key>
 			<integer>2</integer>
 			<key>HotKey Window Floats</key>
-			<false/>
+			<true/>
 			<key>HotKey Window Reopens On Activation</key>
 			<false/>
 			<key>Icon</key>
@@ -694,7 +702,7 @@
 			<key>Rows</key>
 			<integer>40</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>3000</integer>
 			<key>Selected Text Color</key>
@@ -952,6 +960,8 @@
 	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
+	<key>UIElementRequiresHotkeys</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>kCPKSelectionViewPreferredModeKey</key>

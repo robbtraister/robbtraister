@@ -54,10 +54,12 @@ fi
 # install common utilities
 if [ "$(command -v brew)" ]
 then
+  brew tap oven-sh/bun
   brew install \
     authy \
     bash \
     # bitwarden \ # use the app store version for biometrics
+    bun \
     caffeine \
     calibre \
     discord \
@@ -71,6 +73,7 @@ then
     grep \
     gzip \
     iterm2 \
+    jq \
     kap \
     macdown \
     mariadb \

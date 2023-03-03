@@ -11,6 +11,8 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 shopt -s globstar
 
 # git shortcuts
@@ -33,6 +35,18 @@ alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) && git push -
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
 alias wip='git commit -m wip --no-verify'
+
+fixup() {
+  COMMIT=${1}
+  if [ -z "${COMMIT}" ]
+  then
+    >&2 echo 'commit hash is required'
+    exit 1
+  fi
+
+  git commit --fixup ${COMMIT}
+  git rebase -i --autosquash ${COMMIT}~
+}
 
 prune() {
   REMOTE=${1:-origin}
@@ -159,7 +173,7 @@ gr() {
   then
     flags='-ri'
   fi
-  grep "$flags" "$1" '.' --exclude=.git* --exclude=package-lock.json --exclude-dir={.git,bower_components,build,coverage,dist,node_modules}
+  grep "$flags" "$1" '.' --exclude=.git* --exclude=package-lock.json --exclude-dir={.git,bower_components,build,coverage,dist,node_modules} --exclude=.*cache --exclude=*.tsbuildinfo
 }
 alias gri='CASE_INSENSITIVE=true gr'
 
@@ -265,14 +279,26 @@ update() {
 if [ "$(nvm --version 2> /dev/null)" ]
 then
   nvm_use() {
-    if [ -f ./.nvmrc ]
+    if [ -f ./package.json ]
     then
-      nvm use 2> /dev/null
-    else
-      if [ -f ./package.json ]
-      then
-        nvm use default 2> /dev/null
-      fi
+      (
+        while [ true ]
+        do
+          if [ -f ./.nvmrc ]
+          then
+            nvm use
+            exit 0
+          fi
+
+          if [ "$(pwd)" == '/' ]
+          then
+            # no .nvmrc file found, so use default
+            exit 1
+          else
+            builtin cd ..
+          fi
+        done
+      ) || nvm use default
     fi
   }
 
