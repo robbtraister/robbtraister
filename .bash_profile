@@ -11,7 +11,7 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[ ! -f /opt/homebrew/bin/brew ] || eval "$(/opt/homebrew/bin/brew shellenv)"
 
 shopt -s globstar
 
