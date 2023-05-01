@@ -87,7 +87,7 @@ show() {
 }
 
 # docker shortcuts
-alias dc='docker-compose'
+alias dc='docker compose'
 alias images='docker images'
 alias nuke="docker system prune -f && docker network prune -f && (docker volume ls --format='{{.Name}}' | egrep '^[a-z0-9]{64}$' | xargs docker volume rm)"
 # alias run='npm run-script'
@@ -319,3 +319,10 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 export PATH="/usr/local/sbin:$PATH"
 
+vscode=$(which code)
+code() {
+  (
+    cd ${1:-.}
+    $vscode .
+  )
+}

@@ -54,14 +54,16 @@ fi
 # install common utilities
 if [ "$(command -v brew)" ]
 then
+  brew tap hashicorp/tap
   brew tap oven-sh/bun
   brew install \
     authy \
     bash \
     # bitwarden \ # use the app store version for biometrics
-    bun \
+    oven-sh/bun/bun \
     caffeine \
     calibre \
+    db-browser-for-sqlite \
     discord \
     duet \
     homebrew/cask/docker \
@@ -69,6 +71,7 @@ then
     fnm \
     gimp \
     git \
+    github \
     google-chrome \
     grep \
     gzip \
@@ -84,11 +87,13 @@ then
     # nvm \
     openssh \
     openssl \
+    pgadmin4 \
     postgresql \
     python3 \
     redis \
     ruby \
     slack \
+    hashicorp/tap/terraform \
     tmux \
     vim \
     visual-studio-code \
