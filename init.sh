@@ -78,6 +78,7 @@ then
     iterm2 \
     jq \
     kap \
+    keybase \
     macdown \
     mariadb \
     memcached \
