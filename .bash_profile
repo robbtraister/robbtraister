@@ -22,19 +22,28 @@ alias branches='git branch --all'
 alias cb='git checkout -b'
 alias clean='git add -A && git reset HEAD --hard'
 alias co='git checkout'
-alias commit='git commit -m'
-alias d='git diff'
-alias dh='git diff HEAD~1..HEAD'
+# alias commit='git commit -m'
+alias d='git diff -b'
+alias dh='git diff -b HEAD~1..HEAD'
 alias drop='git stash drop'
 alias list='git stash list'
 alias locals='git branch --list'
 alias log='git log'
 alias pop='git add -A && git stash pop'
 alias pull='git pull && prune'
-alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) && git push --tags --no-verify"
+alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) --force-with-lease && git push --tags --no-verify"
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
 alias wip='git commit -m wip --no-verify'
+
+commit() {
+  if [ $# == 0 ]
+  then
+    git commit
+  else
+    git commit -m "$1"
+  fi
+}
 
 fixup() {
   COMMIT=${1}
@@ -116,9 +125,9 @@ alias serve='python3 -m http.server'
 alias amp='amphtml-validator'
 alias com='cost-of-modules'
 alias etime='ps -o etime'
-alias serve='python -m SimpleHTTPServer'
 alias sme='source-map-explorer'
 alias wba='webpack-bundle-analyzer'
+alias y='yarn'
 
 presetDir() {
   cd "$1/$2"
@@ -127,6 +136,7 @@ alias ws="presetDir $HOME/Documents/workspace"
 alias ci="presetDir $HOME/Documents/workspace/CitrineInformatics"
 alias rt="presetDir $HOME/Documents/workspace/robbtraister"
 alias sb="presetDir $HOME/Documents/workspace/sandbox"
+alias sm="presetDir $HOME/Documents/workspace/SaasLinkHQ"
 # if no package.json is found, npm prefix returns pwd
 alias root="cd $(npm prefix)"
 
@@ -173,7 +183,7 @@ gr() {
   then
     flags='-ri'
   fi
-  grep "$flags" "$1" '.' --exclude=.git* --exclude=package-lock.json --exclude-dir={.git,bower_components,build,coverage,dist,node_modules} --exclude=.*cache --exclude=*.tsbuildinfo
+  grep "$flags" "$1" '.' --exclude=.git* --exclude=package-lock.json --exclude-dir={.git,.yarn,bower_components,build,coverage,dist,node_modules} --exclude=.*cache --exclude=*.tsbuildinfo
 }
 alias gri='CASE_INSENSITIVE=true gr'
 

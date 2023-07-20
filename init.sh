@@ -5,14 +5,6 @@
 
 THIS_DIR=$(cd "$(dirname "$0")" && pwd)
 
-# download apps
-if [ "$(command -v open)" ]
-then
-  open \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+duet+display' \
-    'https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q=download+firefox+developer+edition'
-fi
-
 if [ "$(command -v apt)" ]
 then
   apt update
@@ -54,12 +46,14 @@ fi
 # install common utilities
 if [ "$(command -v brew)" ]
 then
+  brew tap homebrew/core
+  brew tap homebrew/cask-versions
   brew tap hashicorp/tap
   brew tap oven-sh/bun
   brew install \
+    arc \
     authy \
     bash \
-    # bitwarden \ # use the app store version for biometrics
     oven-sh/bun/bun \
     caffeine \
     calibre \
@@ -67,7 +61,7 @@ then
     discord \
     duet \
     homebrew/cask/docker \
-    firefox \
+    firefox-developer-edition \
     fnm \
     gimp \
     git \
@@ -81,11 +75,11 @@ then
     keybase \
     macdown \
     mariadb \
+    mas \
     memcached \
     nano \
     nginx \
     node \
-    # nvm \
     openssh \
     openssl \
     pgadmin4 \
@@ -101,6 +95,9 @@ then
     yarn \
     zoom \
     zsh
+
+  # Use the App Store version of BitWarden for biometrics support
+  mas install 1352778147 # bitwarden
 fi
 
 # install global npm utilities
