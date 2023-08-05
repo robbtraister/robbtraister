@@ -40,7 +40,7 @@ fi
 # install homebrew
 if [ "$(command -v ruby)" ]
 then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 2> /dev/null
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2> /dev/null
 fi
 
 # install common utilities
