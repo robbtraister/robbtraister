@@ -67,6 +67,7 @@ then
     git \
     github \
     google-chrome \
+    gpg \
     grep \
     gzip \
     iterm2 \
