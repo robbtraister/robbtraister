@@ -9,6 +9,7 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 # export PS1="\[\e[43m\]\[\e[38;5;0m\]\w\[\e[42m\]\[\e[1;97m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[0m\]\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 
 export COMPOSE_DOCKER_CLI_BUILD=1
+export COMPOSE_MENU=false
 export DOCKER_BUILDKIT=1
 
 [ ! -f /opt/homebrew/bin/brew ] || eval "$(/opt/homebrew/bin/brew shellenv)"
