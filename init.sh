@@ -51,8 +51,8 @@ then
   brew tap hashicorp/tap
   brew tap oven-sh/bun
   brew install \
+    android-file-transfer \
     arc \
-    authy \
     bash \
     oven-sh/bun/bun \
     caffeine \
@@ -86,6 +86,16 @@ then
     pgadmin4 \
     postgresql \
     python3 \
+      # https://github.com/sindresorhus/quick-look-plugins
+      qlcolorcode \
+      qlstephen \
+      qlmarkdown \
+      quicklook-json \
+      qlimagesize \
+      suspicious-package \
+      apparency \
+      quicklookase \
+      qlvideo \
     redis \
     ruby \
     slack \
@@ -97,6 +107,8 @@ then
     zoom \
     zsh
 
+  # Use the App Store iPad version of Authy because the desktop version is discontinued
+  mas install 494168017 # authy
   # Use the App Store version of BitWarden for biometrics support
   mas install 1352778147 # bitwarden
 fi
