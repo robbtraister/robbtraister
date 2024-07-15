@@ -47,15 +47,15 @@ commit() {
 }
 
 fixup() {
-  COMMIT=${1}
+  COMMIT="$(git rev-parse "${1}")"
   if [ -z "${COMMIT}" ]
   then
-    >&2 echo 'commit hash is required'
+    >&2 echo 'git ref is required'
     exit 1
   fi
 
-  git commit --fixup ${COMMIT}
-  git rebase -i --autosquash ${COMMIT}~
+  git commit --fixup "${COMMIT}"
+  git rebase -i --autosquash "${COMMIT}~"
 }
 
 prune() {
@@ -115,6 +115,11 @@ bud() {
   dc build --pull $@ && dc up --remove-orphans --force-recreate $@; dc down -v
 }
 
+# node shortcuts
+alias y=yarn
+alias p=pnpm
+alias nx='npx nx'
+
 # python shortcuts
 alias pip=pip3
 alias python=python3
@@ -128,7 +133,6 @@ alias com='cost-of-modules'
 alias etime='ps -o etime'
 alias sme='source-map-explorer'
 alias wba='webpack-bundle-analyzer'
-alias y='yarn'
 
 presetDir() {
   cd "$1/$2"
@@ -179,14 +183,10 @@ dev() {
 }
 
 gr() {
-  flags='-r'
-  if [ $CASE_INSENSITIVE ]
-  then
-    flags='-ri'
-  fi
-  grep "$flags" "$1" '.' --exclude=.git* --exclude=package-lock.json --exclude-dir={.git,.yarn,bower_components,build,coverage,dist,node_modules} --exclude=.*cache --exclude=*.tsbuildinfo
+  egrep -r --exclude=.git* --exclude=package-lock.json --exclude=report.html --exclude=stats.json --exclude-dir={.coverage,.git,.mypy_cache,.nx,.tsc,.yarn,bower_components,build,coverage,dist,node_modules,patches,playwright-report,public,storybook-output,tsc,__test__} --exclude=.*cache --exclude=*.tsbuildinfo "$@" '.'
 }
-alias gri='CASE_INSENSITIVE=true gr'
+alias gri='gr -i'
+# CASE_INSENSITIVE=true gr'
 
 ip() {
   ifconfig | awk '/broadcast/ { print $2 }'
