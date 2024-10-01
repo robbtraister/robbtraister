@@ -74,6 +74,7 @@ then
     jq \
     kap \
     keybase \
+    jesseduffield/lazydocker/lazydocker \
     macdown \
     mariadb \
     mas \
@@ -86,16 +87,6 @@ then
     pgadmin4 \
     postgresql \
     python3 \
-      # https://github.com/sindresorhus/quick-look-plugins
-      qlcolorcode \
-      qlstephen \
-      qlmarkdown \
-      quicklook-json \
-      qlimagesize \
-      suspicious-package \
-      apparency \
-      quicklookase \
-      qlvideo \
     redis \
     ruby \
     slack \
