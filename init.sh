@@ -75,6 +75,7 @@ then
     kap \
     keybase \
     jesseduffield/lazydocker/lazydocker \
+    jesseduffield/lazygit/lazygit \
     macdown \
     mariadb \
     mas \
