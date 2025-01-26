@@ -11,6 +11,7 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 export COMPOSE_DOCKER_CLI_BUILD=1
 export COMPOSE_MENU=false
 export DOCKER_BUILDKIT=1
+export COREPACK_ENABLE_AUTO_PIN=0
 
 [ ! -f /opt/homebrew/bin/brew ] || eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -332,8 +333,15 @@ export PATH="/usr/local/sbin:$PATH"
 
 vscode=$(which code)
 code() {
+  # use cd to trigger fnm
   (
-    cd ${1:-.}
-    $vscode .
+    TARGET=${1:-.}
+    if [ -d "${TARGET}" ]
+    then
+      cd "${TARGET}"
+    else
+      cd "$(dirname "${TARGET}")"
+    fi
   )
+  $vscode $@
 }
