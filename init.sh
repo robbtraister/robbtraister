@@ -74,8 +74,8 @@ then
     jq \
     kap \
     keybase \
-    jesseduffield/lazydocker/lazydocker \
-    jesseduffield/lazygit/lazygit \
+    lazydocker \
+    lazygit \
     macdown \
     mariadb \
     mas \
