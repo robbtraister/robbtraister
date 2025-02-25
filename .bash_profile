@@ -23,7 +23,7 @@ alias amend='git commit --amend'
 alias branches='git branch --all'
 alias cb='git checkout -b'
 alias clean='git add -A && git reset HEAD --hard'
-alias co='git checkout'
+# alias co='git checkout'
 # alias commit='git commit -m'
 alias d='git diff -b'
 alias dh='git diff -b HEAD~1..HEAD'
@@ -37,6 +37,12 @@ alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) --force-with-
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
 alias wip='git commit -m wip --no-verify'
+
+co() {
+  git checkout $@
+  nvm_use 2> /dev/null || true
+  yarn_install 2> /dev/null || true
+}
 
 commit() {
   if [ $# == 0 ]
@@ -273,6 +279,26 @@ update() {
   )
 }
 
+yarn_install() (
+  while [ true ]
+  do
+    if [ -f ./yarn.lock ]
+    then
+      yarn
+      exit 0
+    fi
+
+    if [ "$(pwd)" == '/' ]
+    then
+      # no yarn.lock file found
+      exit 1
+    else
+      builtin cd ..
+    fi
+  done
+)
+
+
 [ -z "$EDITOR" ] && export EDITOR=vim
 [ -z "$GIT_EDITOR" ] && export GIT_EDITOR=vim
 
@@ -291,27 +317,24 @@ update() {
 if [ "$(nvm --version 2> /dev/null)" ]
 then
   nvm_use() {
-    if [ -f ./package.json ]
-    then
-      (
-        while [ true ]
-        do
-          if [ -f ./.nvmrc ]
-          then
-            nvm use
-            exit 0
-          fi
+    (
+      while [ true ]
+      do
+        if [ -f ./.nvmrc ]
+        then
+          nvm use
+          exit 0
+        fi
 
-          if [ "$(pwd)" == '/' ]
-          then
-            # no .nvmrc file found, so use default
-            exit 1
-          else
-            builtin cd ..
-          fi
-        done
-      ) || nvm use default
-    fi
+        if [ "$(pwd)" == '/' ]
+        then
+          # no .nvmrc file found, so use default
+          exit 1
+        else
+          builtin cd ..
+        fi
+      done
+    ) || ([ -f ./package.json ] && nvm use default)
   }
 
   cd() {
