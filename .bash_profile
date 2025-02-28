@@ -39,9 +39,9 @@ alias status='git status'
 alias wip='git commit -m wip --no-verify'
 
 co() {
-  git checkout $@
-  nvm_use 2> /dev/null || true
-  yarn_install 2> /dev/null || true
+  git checkout $@ && \
+    (nvm_use 2> /dev/null || true) && \
+    (yarn_install 2> /dev/null || true)
 }
 
 commit() {
@@ -190,7 +190,7 @@ dev() {
 }
 
 gr() {
-  egrep -r --exclude=.git* --exclude=package-lock.json --exclude=report.html --exclude=stats.json --exclude-dir={.coverage,.git,.mypy_cache,.nx,.tsc,.yarn,bower_components,build,coverage,dist,node_modules,patches,playwright-report,public,storybook-output,tsc,__test__} --exclude=.*cache --exclude=*.tsbuildinfo "$@" '.'
+  egrep -r --exclude=.git* --exclude=package-lock.json --exclude=report.html --exclude=stats.json --exclude-dir={.coverage,.git,.mypy_cache,.nx,.react-router,.tsc,.yarn,bower_components,build,coverage,dist,node_modules,patches,playwright-report,public,storybook-output,tsc,__test__} --exclude=.*cache --exclude=*.tsbuildinfo "$@" '.'
 }
 alias gri='gr -i'
 # CASE_INSENSITIVE=true gr'
