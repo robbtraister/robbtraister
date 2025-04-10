@@ -40,8 +40,8 @@ alias wip='git commit -m wip --no-verify'
 
 co() {
   git checkout $@ && \
-    (nvm_use 2> /dev/null || true) && \
-    (yarn_install 2> /dev/null || true)
+    (nvm_use 2> /dev/null || true)
+    # (yarn_install 2> /dev/null || true)
 }
 
 commit() {
