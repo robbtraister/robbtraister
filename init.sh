@@ -53,6 +53,7 @@ then
   brew install \
     android-file-transfer \
     arc \
+    awscli-local \
     bash \
     oven-sh/bun/bun \
     caffeine \
