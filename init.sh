@@ -62,6 +62,7 @@ then
     discord \
     duet \
     homebrew/cask/docker \
+    ente-auth \
     firefox-developer-edition \
     fnm \
     gimp \
