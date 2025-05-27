@@ -8,6 +8,7 @@ export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev
 # export PS1="\$(echo \$WORKSPACE | sed -e 's/^/\[\033[38;5;208m\][/' -e 's/$/]\[\033[0m\]/')\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 # export PS1="\[\e[43m\]\[\e[38;5;0m\]\w\[\e[42m\]\[\e[1;97m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[0m\]\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 
+export COMPOSE_BAKE=true
 export COMPOSE_DOCKER_CLI_BUILD=1
 export COMPOSE_MENU=false
 export DOCKER_BUILDKIT=1
