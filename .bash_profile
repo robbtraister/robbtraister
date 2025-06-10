@@ -151,7 +151,9 @@ alias rt="presetDir $HOME/Documents/workspace/robbtraister"
 alias sb="presetDir $HOME/Documents/workspace/sandbox"
 alias sm="presetDir $HOME/Documents/workspace/SaasLinkHQ"
 # if no package.json is found, npm prefix returns pwd
-alias root="cd $(npm prefix)"
+root() {
+  cd "$(npm prefix)"
+}
 
 stop() {
   NAME="$1"
