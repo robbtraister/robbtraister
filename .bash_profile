@@ -260,21 +260,6 @@ update() {
     apt autoremove
   fi
 
-  if [ "$(nvm --version 2> /dev/null)" ]
-  then
-    CURRENT=$(nvm current)
-    nvm use system
-  fi
-  if [ "$(command -v ncu)" ]
-  then
-    $(ncu -g | grep '^npm -g install')
-  fi
-  npm -g update
-  if [ "$(nvm --version 2> /dev/null)" ]
-  then
-    nvm use "${CURRENT}"
-  fi
-
   (
     rt
     cd robbtraister
