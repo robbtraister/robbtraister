@@ -117,10 +117,16 @@ up() {
   dc up --build --remove-orphans --force-recreate $@
 }
 down() {
-  dc down -v $@
+  dc down --volumes --remove-orphans $@
+  EXITED=$(docker ps -a | grep Exited | awk '{print $1;}')
+  if [ -n "${EXITED}" ]
+  then
+    docker stop $EXITED
+    docker rm $EXITED
+  fi
 }
 bud() {
-  dc build --pull $@ && dc up --remove-orphans --force-recreate $@; dc down -v
+  build $@ && up $@; down
 }
 
 # node shortcuts
