@@ -51,14 +51,12 @@ then
   brew tap hashicorp/tap
   brew tap oven-sh/bun
   brew install \
-    android-file-transfer \
     arc \
     awscli-local \
     bash \
     oven-sh/bun/bun \
     caffeine \
     calibre \
-    db-browser-for-sqlite \
     discord \
     duet \
     homebrew/cask/docker \
@@ -75,7 +73,6 @@ then
     iterm2 \
     jq \
     kap \
-    keybase \
     lazydocker \
     lazygit \
     macdown \
@@ -87,7 +84,6 @@ then
     node \
     openssh \
     openssl \
-    pgadmin4 \
     postgresql \
     python3 \
     redis \
