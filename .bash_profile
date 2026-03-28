@@ -2,7 +2,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 
-export AWS_REGION=us-east-1
+# export AWS_REGION=us-east-1
 
 export PS1="\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
 # export PS1="\$(echo \$WORKSPACE | sed -e 's/^/\[\033[38;5;208m\][/' -e 's/$/]\[\033[0m\]/')\[\e[1;33m\]\w\[\e[1;32m\]\$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/^/{/' -e 's/$/}/')\n\[\e[1;36m\][\$(date +%k:%M:%S)]\[\e[0m\]: "
