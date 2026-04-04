@@ -308,35 +308,8 @@ yarn_install() (
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ "$(nvm --version 2> /dev/null)" ]
-then
-  nvm_use() {
-    (
-      while [ true ]
-      do
-        if [ -f ./.nvmrc ]
-        then
-          nvm use
-          exit 0
-        fi
-
-        if [ "$(pwd)" == '/' ]
-        then
-          # no .nvmrc file found, so use default
-          exit 1
-        else
-          builtin cd ..
-        fi
-      done
-    ) || ([ -f ./package.json ] && nvm use default)
-  }
-
-  cd() {
-    builtin cd "$@" && nvm_use
-  }
-
-  nvm_use
-fi
+eval "$(fnm env --corepack-enabled --shell bash --use-on-cd --version-file-strategy recursive)"
+eval "$(fnm completions --shell bash)"
 
 # source <(npx --shell-auto-fallback bash)
 
