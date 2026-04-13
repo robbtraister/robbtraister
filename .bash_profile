@@ -130,7 +130,7 @@ bud() {
 }
 
 # node shortcuts
-alias y=yarn
+alias y='fnm exec yarn'
 alias p=pnpm
 alias nx='npx nx'
 
