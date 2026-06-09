@@ -249,7 +249,7 @@ update() {
   then
     brew update-reset
     brew update
-    brew upgrade --force --greedy --overwrite
+    brew upgrade --force --greedy --overwrite --yes
     brew cleanup
     brew doctor
   fi
