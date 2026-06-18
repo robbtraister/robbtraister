@@ -117,7 +117,7 @@ up() {
   dc up --build --remove-orphans --force-recreate $@
 }
 down() {
-  dc down --volumes --remove-orphans $@
+  COMPOSE_PROFILES='*' dc down --volumes --remove-orphans $@
   EXITED=$(docker ps -a | grep Exited | awk '{print $1;}')
   if [ -n "${EXITED}" ]
   then
