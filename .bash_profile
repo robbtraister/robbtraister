@@ -37,7 +37,11 @@ alias pull='git pull && prune'
 alias push="git push -u origin \$(git rev-parse --abbrev-ref HEAD) --force-with-lease" # && git push --tags --no-verify"
 alias stash='git stash push --keep-index --include-untracked && git reset HEAD'
 alias status='git status'
-alias wip='git commit -m wip --no-verify'
+
+wip() {
+  message="${1:-wip}"
+  git commit -m "${message}" --no-verify
+}
 
 co() {
   git checkout $@ && \
