@@ -108,6 +108,19 @@ show() {
   git stash show "${ref}"
 }
 
+wt() {
+  (
+    dest=$1
+    git worktree add $dest
+    cd $dest
+    if [ -f package.json ]
+    then
+      fnm exec yarn
+    fi
+    code .
+  )
+}
+
 # docker shortcuts
 alias dc='docker compose'
 alias images='docker images'
