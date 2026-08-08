@@ -158,6 +158,20 @@ alias b64d='python3 -c "import base64, sys; print(str(base64.b64decode(bytes(sys
 alias b64e='python3 -c "import base64, sys; print(str(base64.b64encode(bytes(sys.argv[1], \"utf-8\")), \"utf-8\"));"'
 alias serve='python3 -m http.server'
 
+# rancher shortcuts
+k8s() {
+  toggle=${1}
+  if [ "$toggle" == 'on' ]
+  then
+    rdctl set --kubernetes.enabled=true --virtual-machine.memory-in-gb=20 --virtual-machine.number-cpus=8
+  elif [ "$toggle" == 'off' ]
+  then
+    rdctl set --kubernetes.enabled=false --virtual-machine.memory-in-gb=8 --virtual-machine.number-cpus=4
+  else
+    rdctl list-settings | jq '.kubernetes.enabled'
+  fi
+}
+
 # random shortcuts
 alias amp='amphtml-validator'
 alias com='cost-of-modules'
