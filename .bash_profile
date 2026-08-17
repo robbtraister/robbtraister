@@ -110,9 +110,8 @@ show() {
 
 wt() {
   (
-    dest=$1
-    git worktree add $dest
-    cd $dest
+    git worktree add $@
+    cd $1
     if [ -f package.json ]
     then
       fnm exec yarn
