@@ -229,7 +229,7 @@ dev() {
 }
 
 gr() {
-  egrep -r --exclude=.git* --exclude=package-lock.json --exclude=report.html --exclude=stats.json --exclude-dir={.bloop,.coverage,.git,.mypy_cache,.nx,.react-router,.tsc,.venv,.yarn,bower_components,build,coverage,dist,node_modules,patches,playwright-report,public,storybook-output,target,tsc,__test__,test-results} --exclude=.*cache --exclude=*.map --exclude=*.tsbuildinfo "$@" '.'
+  egrep -r --exclude=.git* --exclude=package-lock.json --exclude=report.html --exclude=stats.json --exclude-dir={.bloop,.coverage,.git,.mypy_cache,.nx,.react-router,.tsc,.venv,.yarn,bower_components,build,coverage,dist,node_modules,patches,playwright-report,public,storybook-output,target,tsc,__test__,test-results} --exclude=.*cache --exclude=*.map --exclude=*.pyc --exclude=*.tsbuildinfo "$@" '.'
 }
 alias gri='gr -i'
 # CASE_INSENSITIVE=true gr'
