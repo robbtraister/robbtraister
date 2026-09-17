@@ -162,7 +162,7 @@ k8s() {
   toggle=${1}
   if [ "$toggle" == 'on' ]
   then
-    rdctl set --kubernetes.enabled=true --virtual-machine.memory-in-gb=20 --virtual-machine.number-cpus=8
+    rdctl set --kubernetes.enabled=true --virtual-machine.memory-in-gb=20 --virtual-machine.number-cpus=9
   elif [ "$toggle" == 'off' ]
   then
     rdctl set --kubernetes.enabled=false --virtual-machine.memory-in-gb=8 --virtual-machine.number-cpus=4
