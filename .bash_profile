@@ -167,7 +167,14 @@ k8s() {
   then
     rdctl set --kubernetes.enabled=false --virtual-machine.memory-in-gb=8 --virtual-machine.number-cpus=4
   else
-    rdctl list-settings | jq '.kubernetes.enabled'
+    if [ "$(rdctl list-settings | jq '.kubernetes.enabled')" = 'true' ]
+    then
+      >&2 echo true
+      return 0
+    else
+      >&2 echo false
+      return 1
+    fi
   fi
 }
 
