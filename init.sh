@@ -51,7 +51,6 @@ then
   brew tap hashicorp/tap
   brew tap oven-sh/bun
   brew install \
-    arc \
     awscli-local \
     bash \
     oven-sh/bun/bun \
@@ -86,6 +85,8 @@ then
     openssl \
     postgresql \
     python3 \
+    radar \
+    rancher \
     redis \
     ruby \
     slack \
