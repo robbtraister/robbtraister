@@ -303,6 +303,11 @@ update() {
     apt autoremove
   fi
 
+  if [ "$(command -v eish)" ]
+  then
+    eish update
+  fi
+
   (
     rt
     cd robbtraister
